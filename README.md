@@ -4,6 +4,7 @@ A soothing, eye-friendly Neovim theme inspired by a serene ocean horizon. Featur
 
 ## Features
 
+- ♿ **WCAG AA compliant** - All color combinations meet accessibility standards
 - 🎨 Three beautiful variants:
   - **Dark Original**: Deep oceanic blue background
   - **Dark Black**: Pure black background for OLED displays
