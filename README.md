@@ -21,7 +21,7 @@ A soothing, eye-friendly Neovim theme inspired by a serene ocean horizon. Featur
 
 ```lua
 {
-  "brayden/serene-horizon.nvim",
+  "binbandit/serene-horizon.nvim",
   lazy = false,
   priority = 1000,
   config = function()
@@ -41,7 +41,7 @@ A soothing, eye-friendly Neovim theme inspired by a serene ocean horizon. Featur
 
 ```lua
 use {
-  'brayden/serene-horizon.nvim',
+  'binbandit/serene-horizon.nvim',
   config = function()
     vim.cmd([[colorscheme serene_horizon]])
   end
@@ -51,7 +51,7 @@ use {
 ### Using [vim-plug](https://github.com/junegunn/vim-plug)
 
 ```vim
-Plug 'brayden/serene-horizon.nvim'
+Plug 'binbandit/serene-horizon.nvim'
 
 " In your init.vim
 colorscheme serene_horizon
