@@ -317,6 +317,13 @@ local M = {}
 
 M.setup = function(opts)
   opts = opts or {}
+  
+  -- Validate vim is available
+  if not vim then
+    error("serene_horizon: This theme requires Neovim")
+    return
+  end
+  
   local mode = opts.mode or (vim.o.background == "light" and "light" or "dark")
   local variant = opts.variant or "original"  -- "original" or "black" for dark
 
@@ -331,10 +338,18 @@ M.setup = function(opts)
   vim.o.termguicolors = true
   vim.g.colors_name = "serene_horizon_" .. mode .. "_" .. variant
 
-  local highlights = get_highlights(mode, variant)
+  local ok, highlights = pcall(get_highlights, mode, variant)
+  if not ok then
+    error("serene_horizon: Failed to generate highlights - " .. tostring(highlights))
+    return
+  end
+  
   for group, hl in pairs(highlights) do
     vim.api.nvim_set_hl(0, group, hl)
   end
 end
+
+-- Allow direct colorscheme loading
+M.load = M.setup
 
 return M
